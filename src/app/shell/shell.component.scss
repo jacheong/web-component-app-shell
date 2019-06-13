@@ -1,0 +1,42 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-size: 16px;
+
+	.sidenav-container {
+		flex: 1;
+
+		.sidenav-content {
+			transition: all 0.4s cubic-bezier(.25, .8, .25, 1);
+		}
+
+		.sidenav-content,
+		.main-content {
+			padding: 1rem;
+		}
+
+		&.is-mobile {
+			flex: 1 0 auto;
+		}
+	}
+
+	.spacer {
+		flex: 1 1 auto;
+	}
+}
+
+.is-mobile .toolbar {
+	position: fixed;
+	z-index: 2;
+}
+
+h1.app-name {
+	margin-left: 1rem;
+}

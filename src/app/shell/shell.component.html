@@ -1,0 +1,27 @@
+<div class="container" [class.is-mobile]="isMobileLayout">
+  <mat-toolbar color="primary" class="toolbar">
+    <button mat-icon-button (click)="sideNav.toggle()"><mat-icon svgIcon="menu"></mat-icon></button>
+    <h1 class="app-name">{{topbartitle}}</h1>
+    <div class="spacer"></div>
+    <slot name="toolbar-content-slot"></slot>
+  </mat-toolbar>
+
+  <mat-sidenav-container
+    class="sidenav-container"
+    [style.marginTop.px]="isMobileLayout ? topGap : 0">
+    <mat-sidenav #sideNav
+      class="sidenav-content"
+      [mode]="isMobileLayout ? 'over' : 'side'"
+      [fixedInViewport]="isMobileLayout" [fixedTopGap]="topGap">
+      <div>
+        <slot name="sidenav-content-slot"></slot>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="main-content">
+      <div>
+        <slot name="main-content-slot"></slot>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
