@@ -55,9 +55,15 @@
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js/dist/zone';  // Included with Angular CLI.
-
+import 'zone.js/dist/zone'; // Included with Angular CLI.
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+import '@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js';
+
+if (!window['customElements']) {
+	const script = document.createElement('script');
+	script.src = './assets/webcomponentsjs/bundles/webcomponents-sd-ce.js';
+	document.writeln(script.outerHTML);
+}
